@@ -73,10 +73,12 @@ PUT /todo/{id}/status/not-done
 
 # Tech Stack Used
 
+* Java 8
 * Spring Boot
 * Spring Data JPA (Hibernate)
 * H2 database
 * Swagger
+* Lombok
 
 # How To
 
