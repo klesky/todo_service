@@ -128,7 +128,7 @@ docker rm todo-service
 
 ### Via cmd
 
-Ensure you have the build the project, then run the below cmd
+Ensure you have built the project, then run the below cmd
 
 ```
 mvn spring-boot:run
