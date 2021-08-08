@@ -24,24 +24,22 @@ public class TodoController {
         return todoService.updateTodoDescription(id, description);
     }
 
-    @PutMapping("/{id}/_done")
+    @PutMapping("/{id}/status/done")
     public Todo updateDoneTodo(@PathVariable Long id) {
         return todoService.updateDoneTodo(id);
     }
 
-    @PutMapping("/{id}/_not_done")
+    @PutMapping("/{id}/status/not-done")
     public Todo updateNotDoneTodo(@PathVariable Long id) {
         return todoService.updateNotDoneTodo(id);
     }
 
-    @GetMapping("/not_done")
-    public List<Todo> getAllNotDoneTodo() {
-        return todoService.getAllNotDoneTodo();
-    }
-
     @GetMapping
-    public List<Todo> getAllTodo() {
-        return todoService.getAllTodo();
+    public List<Todo> getAllNotDoneTodo(@RequestParam(required = false) boolean getAll) {
+        if (getAll) {
+            return todoService.getAllTodo();
+        }
+        return todoService.getAllNotDoneTodo();
     }
 
     @GetMapping("/{id}")
